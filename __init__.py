@@ -1,8 +1,8 @@
 bl_info = {
-    "name": "UV Surface Projector Pro",
-    "author": "Simple Code",
-    "version": (3, 0, 1),
-    "blender": (4, 0, 0),
+    "name": "UV Surface Projector",
+    "author": "Jackal",
+    "version": (1, 0, 0),
+    "blender": (4, 2, 0),
     "location": "View3D > Sidebar > UV Projector",
     "description": (
         "Projects curves and meshes onto the active UV target. "
@@ -1126,6 +1126,7 @@ def project_mesh_to_target(
             src_mesh
         )
 
+        # Ensure lookup tables are up to date
         bm.verts.ensure_lookup_table()
         bm.faces.ensure_lookup_table()
 
@@ -1152,6 +1153,10 @@ def project_mesh_to_target(
             bm.verts[index].co = (
                 local_position
             )
+
+        # Re-ensure lookup tables after vertex modifications
+        bm.verts.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
 
         # ----------------------------------------------------
         # Delete invalid faces
@@ -1188,6 +1193,10 @@ def project_mesh_to_target(
                 context="FACES"
             )
 
+        # Re-ensure lookup tables after face deletion
+        bm.verts.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
+
         # ----------------------------------------------------
         # Remove loose invalid vertices
         # ----------------------------------------------------
@@ -1213,6 +1222,10 @@ def project_mesh_to_target(
                 geom=invalid_vertices,
                 context="VERTS"
             )
+
+        # Re-ensure lookup tables after vertex deletion
+        bm.verts.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
 
         # ----------------------------------------------------
         # Optional preserve edges
