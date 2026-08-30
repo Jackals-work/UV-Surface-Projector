@@ -1,5 +1,3 @@
-# 🇬🇧 English
-
 # UV Surface Projector
 
 **Blender Add-on — UV-Based Surface Projection**
