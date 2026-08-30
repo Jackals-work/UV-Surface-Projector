@@ -614,15 +614,6 @@ mathutils
 
 ---
 
-# 📜 License
-
-Developed by:
-
-**Simple Code**
-
-The source code can be modified and extended according to project requirements.
-
----
 
 ## Version
 
@@ -634,8 +625,4 @@ Blender: 4.0+
 
 ---
 
-## Author
 
-**Simple Code**
-
-UV Surface Projector Pro
