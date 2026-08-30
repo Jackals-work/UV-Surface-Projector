@@ -1,6 +1,6 @@
 # 🇬🇧 English
 
-# UV Surface Projector Pro
+# UV Surface Projector
 
 **Blender Add-on — UV-Based Surface Projection**
 
